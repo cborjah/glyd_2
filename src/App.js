@@ -6,7 +6,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 class App extends Component {
   state = { isChecked: false };
 
-  handleOnChange = () => this.setState({ isChecked: !this.state.isChecked });
+  handleOnChange = () =>
+    this.setState(prevState => ({ isChecked: !prevState.isChecked }));
 
   render() {
     const fooStyles = this.state.isChecked ? "hidden" : null;
@@ -14,10 +15,7 @@ class App extends Component {
 
     return (
       <div className="container">
-        <Checkbox
-          color="secondary"
-          onChange={this.handleOnChange}
-        />
+        <Checkbox color="secondary" onChange={this.handleOnChange} />
         <div id="foo">
           <h1 className={fooStyles}>FOO</h1>
         </div>

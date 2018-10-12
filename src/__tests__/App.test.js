@@ -65,21 +65,31 @@ describe("App", () => {
   });
 
   describe("foo header", () => {
-    it('has hidden class when isChecked is true', () => {
+    it("has hidden when isChecked is true", () => {
       const wrapper = shallow(<App />);
       const instance = wrapper.instance();
 
       instance.handleOnChange();
 
-      expect(wrapper.find('#foo').find('h1').hasClass('hidden')).toEqual(true);
-    })
+      expect(
+        wrapper
+          .find("#foo")
+          .find("h1")
+          .hasClass("hidden")
+      ).toEqual(true);
+    });
   });
 
-  describe('bar header', () => {
-    it('has hidden class when isChecked is false', () => {
+  describe("bar header", () => {
+    it("has hidden class when isChecked is false", () => {
       const wrapper = shallow(<App />);
 
-      expect(wrapper.find('#bar').find('h1').hasClass('hidden')).toEqual(true);
-    })
-  })
+      expect(
+        wrapper
+          .find("#bar")
+          .find("h1")
+          .hasClass("hidden")
+      ).toEqual(true);
+    });
+  });
 });
